@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BM GAMERS Billiards - Master the Art of Pool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    :root {
+            --primary: #1a472a;
+            --secondary: #2e8b57;
+            --accent: #c5b358;
+            --light: #f4f4f4;
+            --dark: #121212;
+            --gray: #333;
+          }
+        
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a472a"/><path d="M0 0L100 100" stroke="%232e8b57" stroke-width="2"/><path d="M100 0L0 100" stroke="%232e8b57" stroke-width="2"/></svg>');
+            color: var(--light);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--accent);
+        }
+        
+        h1 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            color: var(--light);
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .social-media {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-media a {
+            color: var(--light);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            padding: 8px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-media a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(26, 71, 42, 0.6);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .location i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+        
+        .location a {
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .location a:hover {
+            text-decoration: underline;
+        }
+        
+        .gallery {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid var(--accent);
+            border-radius: 8px;
+            margin: 10px 0;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+        
+        .content-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 1px solid var(--secondary);
+        }
+        
+        h2, h3, h4, h5 {
+            color: var(--accent);
+            margin: 20px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .game-description {
+            background: rgba(26, 71, 42, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .payment-section {
+            background: rgba(26, 71, 42, 0.8);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid var(--accent);
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .payment-option {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--accent);
+        }
+        
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            margin: 15px auto;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .till-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            border: 2px dashed var(--accent);
+        }
+        
+        .btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px 0;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            border-top: 2px solid var(--accent);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-media {
+                justify-content: center;
+            }
+            
+            .payment-options {
+                flex-direction: column;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>BM GAMERS Billiards</h1>
+            <p class="subtitle">Master the Art of Pool</p>
+            <div class="social-media">
+                <a href="https://wa.me/254110232577" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://tiktok.com/@bmgamers" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://instagram.com/bmgamers" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/bmgamers" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/bmgamers" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="location">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+                <p><strong>Visit Us:</strong> MUKUYU-KIHARU road, 1.5km from Mukuyu junction</p>
+                <a href="https://maps.google.com/?q=Mukuyu-Kiharu+Road+Murang+a+Kenya" target="_blank">Get Directions</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="content-section">
+        <div class="gallery">
+            <a href="pool1.jpg.jpg" target=_blank"> <img src="pool1.jpg.jpg" height="600" width="1200"/></a>
+        </div>
+        
+        <p>Your ultimate resource for pool techniques, game variations, equipment reviews, and professional tips</p>
+    </div>
+    
+    <div class="content-section">
+        <h2>The Game of Skill and Strategy</h2>
+        <p class="subtitle">ABOUT POOL</p>
+        
+        <div class="gallery">
+            <a href="pool2.jpg.jpg" target=_blank"> <img src="pool2.jpg.jpg" height="600" width="1200"/></a>
+        </div>
+        
+        <p>Pool, also known as pocket billiards, is a fascinating cue sport that combines physics, geometry, and psychology. Played on a rectangular table with six pockets, players use a cue stick to strike cue balls against object balls.</p>
+        <p>With origins dating back to the 15th century, pool has evolved into a popular recreational activity and competitive sport enjoyed by millions worldwide in homes, bars, and professional tournaments.</p>
+        <p>Beyond being just a game, pool teaches patience, concentration, and strategic thinking while providing social interaction and friendly competition.</p>
+    </div>
+    
+    <div class="content-section">
+        <h3>TYPES OF POOL GAMES</h3>
+        <p class="subtitle">Popular Pool Games</p>
+        
+        <div class="gallery">
+            <a href="pool3.jpg.jpg" target=_blank"> <img src="pool3.jpg.jpg" height="600" width="1200"/></a>
+        </div>
+        
+        <ol>
+            <li><b>8 BALL</b></li>
+            <li><b>9 BALL</b></li>
+            <li><b>10 BALL</b></li>
+            <li><b>STRAIGHT POOL (14.1)</b></li>
+            <li><b>BANK POOL</b></li>
+        </ol>
+        
+        <h4>DESCRIBING POPULAR GAMES</h4>
+        
+        <div class="game-description">
+            <p class="subtitle">8-BALL</p>
+            <p>The most popular pool game worldwide. Players are assigned either stripes or solids and must pocket all of their group before legally pocketing the 8-ball to win.</p>
+        </div>
+        
+        <div class="game-description">
+            <p class="subtitle">9-BALL</p>
+            <p>Players must hit the lowest-numbered ball first. The game is won by legally pocketing the 9-ball. Known for its fast-paced action and combination shots.</p>
+        </div>
+        
+        <div class="game-description">
+            <p class="subtitle">Straight Pool (14.1 Continuous)</p>
+            <p>Also called 14.1 continuous. Players call any ball and pocket. The first player to reach a predetermined score wins. Favored by many professionals.</p>
+        </div>
+        
+        <h5>POOL TECHNIQUES</h5>
+        
+        <div class="game-description">
+            <p class="subtitle">Mastering the Basics</p>
+            <p>A solid, balanced stance is the foundation of a good shot. Keep your feet shoulder-width apart, with your front foot slightly forward. Bend at the waist until your chin is directly above the cue.</p>
+            <p>Your bridge hand provides stability for the cue. The closed bridge offers more control for powerful shots, while the open bridge is great for finesse shots and English.</p>
+            <p>Applying side spin to the cue ball allows you to control its path after contact. This advanced technique is essential for position play and making difficult shots.</p>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <h5>JOIN OUR COMMUNITY</h5>
+        <p class="subtitle">Stay Updated with BM GAMERS</p>
+        <p>Subscribe to our newsletter for tips, tricks, and the latest pool news</p>
+        
+        <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email address">
+            <button class="btn">Subscribe Now</button>
+        </div>
+    </div>
+    <footer>
+<div class="payment-section">
+        <h2>Payment Options</h2>
+        <p>We accept M-Pesa payments for your convenience</p>
+        
+        <div class="payment-options">
+            <div class="payment-option">
+                <h3>Pay with M-Pesa</h3>
+                <p>Use our Till Number:</p>
+                <div class="till-number">8565763</div>
+                <p>Enter this number in your M-Pesa menu under "Pay Bill"</p>
+                <button class="btn" onclick="showMpesaPrompt()">Simulate M-Pesa Payment</button>
+            </div>
+            
+            <div class="payment-option">
+                <h3>Scan QR Code</h3>
+                <p>Scan this code with your M-Pesa app</p>
+                <div class="qr-code">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'><rect width='150' height='150' fill='white'/><path d='M0 0H60V60H0V0ZM90 0H150V60H90V0ZM0 90H60V150H0V90ZM90 90H150V150H90V90ZM60 60H90V90H60V60Z' fill='black'/><text x='75' y='135' font-family='Arial' font-size='8' fill='black' text-anchor='middle'>MPESA</text></svg>" alt="M-Pesa QR Code">
+                </div>
+                <p>Scan to pay instantly</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BM GAMERS</h3>
+                <p>Your ultimate resource for everything related to pool and billiards. Improve your game with our expert guides and resources.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-media">
+                    <a href="https://wa.me/2540110232577" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com/@bmgamers" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://instagram.com/bmgamers" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/bmgamers" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/bmgamers" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p>MUKUYU-KIHARU road</p>
+                <p>1.5km from Mukuyu junction</p>
+                <p>Left side maragi secondary School</p>
+                <a href="https://maps.google.com/?q=Mukuyu-Kiharu+Road+Murang+a+Kenya" target="_blank" class="btn">Get Directions</a>
+            </div>
+        </div>
+        
+        <p>&copy; 2025 BM GAMERS. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showMpesaPrompt() {
+            const phone = prompt("Please enter your M-Pesa phone number:");
+            if (phone) {
+                if (phone.length !== 10 || !phone.startsWith('07')) {
+                    alert("Please enter a valid Kenyan phone number (10 digits starting with 07)");
+                    return;
+                }
+                
+                alert(`Payment request sent to ${phone}. Please check your phone to complete the payment.`);
+                
+                // Simulate payment processing
+                setTimeout((60s) => {
+                    alert("Payment completed successfully! Thank you for your purchase.");
+                }, 3000);
+            }
+        }
+        
+        // Simple image modal functionality
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('click', function() {
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                modal.style.display = 'flex';
+                modal.style.justifyContent = 'center';
+                modal.style.alignItems = 'center';
+                modal.style.zIndex = '1000';
+                modal.onclick = function() {
+                    document.body.removeChild(modal);
+                };
+                
+                const modalImg = document.createElement('img');
+                modalImg.src = this.src;
+                modalImg.style.maxWidth = '90%';
+                modalImg.style.maxHeight = '90%';
+                modalImg.style.border = '5px solid #c5b358';
+                modalImg.style.borderRadius = '8px';
+                
+                modal.appendChild(modalImg);
+                document.body.appendChild(modal);
+            });
+        });
+    </script>
+</body>
+</html>
